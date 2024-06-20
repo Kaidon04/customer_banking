@@ -16,13 +16,10 @@ def create_savings_account(balance, interest_rate, months):
     """
     # Create an instance of the `Account` class and pass in the balance and interest parameters.
     #  Hint: You need to add the interest as a value, i.e, 0.
-    savings_balance = float(input("What is the balance of your savings account?"))
-    savings_apr = float(input("What is the interest rate on your savings account"))
-    savings_time = int(input("How many months has your money been gaining interest?"))
-
     saving_account = Account(balance, interest_rate)
     # Calculate interest earned
-    interest_earned = interest_rate * savings_time
+    interest_earned = savings_balance * (interest_rate/100 * months/12)
+  
     
     # Update the savings account balance by adding the interest earned
     updated_savings_balance = interest_earned + balance
@@ -34,6 +31,6 @@ def create_savings_account(balance, interest_rate, months):
     saving_account.set_interest(interest_earned)
 
     # Return the updated balance and interest earned.
-    return saving_account.get_balance, saving_account.get_interest
+    return saving_account.get_balance(), saving_account.get_interest()
 
  
